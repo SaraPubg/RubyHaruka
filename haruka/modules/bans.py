@@ -44,7 +44,7 @@ def ban(bot: Bot, update: Update, args: List[str]) -> str:
             raise
 
     if user_id == bot.id:
-        message.reply_text(tld(chat.id, "You’re Powerful then me? 😡😒"))
+        message.reply_text(tld(chat.id, "You’re powerful than me? 😡😒"))
         return ""
 
     if is_user_ban_protected(chat, user_id, member):
