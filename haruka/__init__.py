@@ -124,4 +124,4 @@ tg.RegexHandler = CustomRegexHandler
 if ALLOW_EXCL:
     tg.CommandHandler = CustomCommandHandler
 
-tg.CommandHandler = GbanLockHandler
+
