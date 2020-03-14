@@ -16,7 +16,7 @@ from haruka.modules.helper_funcs.chat_status import user_admin, is_user_ban_prot
 from haruka.modules.helper_funcs.misc import build_keyboard, revert_buttons
 from haruka.modules.helper_funcs.msg_types import get_welcome_type
 from haruka.modules.helper_funcs.string_handling import markdown_parser, \
-    escape_invalid_curly_brackets, extract_time, markdown_to_html
+    escape_invalid_curly_brackets, extract_time
 from haruka.modules.log_channel import loggable
 
 
