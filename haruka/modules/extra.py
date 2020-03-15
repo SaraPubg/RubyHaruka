@@ -250,9 +250,12 @@ def table(bot: Bot, update: Update):
                 update.message.reply_text("Go do some work instead of flippin tables you helpless fagit.")
 		
 __help__ = """
+ - /shrug : get shrug XD.
  - /table : get flip/unflip :v.
  - /decide : Randomly answers yes/no/maybe
  - /toss : Tosses A coin
+ - /insult : Insults the person
+ - /zal <any text> : zalgofy! your tex Lyrics Plugin will take some moar time to come up.
  - /abuse : Abuses the cunt
  - /tts <any text> : Converts text to speech
  - /bluetext : check urself :V
