@@ -258,6 +258,7 @@ __help__ = """
  - /bluetext : check urself :V
  - /roll : Roll a dice.
  - /rlg : Join ears,nose,mouth and create an emo ;-;
+ - /lyrics <keyword> : Find your favourite songs' lyrics
 """
 
 __mod_name__ = "Extras"
