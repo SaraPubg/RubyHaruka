@@ -20,12 +20,15 @@ from haruka.modules.helper_funcs.misc import paginate_modules
 from haruka.modules.translations.strings import tld, tld_help 
 from haruka.modules.connection import connected
 
-PM_START = """Hello {}, my name is {}!
+PM_START = """Hello {}, my name is *{}*. I'm here to help you to manage your groups.
 
-Welcome to hell .
+I'm Genius, Billionaire, Playboy, Philanthropist! 😎
 
+[I Love my Creator 3000](tg://user?id={}).
 
-Click (Help) button to find out more about how to use me to my full potential."""
+Want to add me in your group? [Click here!](t.me/Rubytony_bot?startgroup=add)
+
+Click (Help) button to find out list of available commands."""
 
 
 IMPORTED = {}
@@ -171,7 +174,7 @@ def control_panel(bot, update):
 
         LOGGER.info(query.data)
     else:
-        M_match = "MenheraChan is the best bot" #LMAO, don't uncomment
+        M_match = "TonyStark is the best bot" #LMAO, don't uncomment
 
     if M_match:
         text = "*Control panel* 🛠"
