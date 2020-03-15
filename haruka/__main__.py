@@ -20,11 +20,12 @@ from haruka.modules.helper_funcs.misc import paginate_modules
 from haruka.modules.translations.strings import tld, tld_help 
 from haruka.modules.connection import connected
 
-PM_START = """Hello {}, my name is {}. I'm here to help you to manage your groups.
+PM_START = """Hello {}, my name is *{}*
+I'm here to help you to manage your groups.
 
 I'm Genius, Billionaire, Playboy, Philanthropist! 😎
 
-[I Love my Creator 3000](tg://user?id={}).
+[I Love my Creator 3000](t.me/rubyrox).
 
 Want to add me in your group? [Click here!](t.me/Rubytony_bot?startgroup=add)
 
