@@ -10,7 +10,7 @@ pythonping
 pynewtonmath
 #memes from SkittBot
 spongemock
-zalgo-text
+zalgo_text
 geopy
 nltk
 aiohttp>=2.2.5
