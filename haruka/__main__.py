@@ -10,15 +10,15 @@ from telegram.ext import CommandHandler, Filters, MessageHandler, CallbackQueryH
 from telegram.ext.dispatcher import run_async, DispatcherHandlerStop, Dispatcher
 from telegram.utils.helpers import escape_markdown
 
-from haruka import dispatcher, updater, TOKEN, WEBHOOK, SUDO_USERS, OWNER_ID, CERT_PATH, PORT, URL, LOGGER, \
+from menhera import dispatcher, updater, TOKEN, WEBHOOK, SUDO_USERS, OWNER_ID, CERT_PATH, PORT, URL, LOGGER, \
     ALLOW_EXCL
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-from haruka.modules import ALL_MODULES
-from haruka.modules.helper_funcs.chat_status import is_user_admin
-from haruka.modules.helper_funcs.misc import paginate_modules
-from haruka.modules.translations.strings import tld, tld_help 
-from haruka.modules.connection import connected
+from menhera.modules import ALL_MODULES
+from menhera.modules.helper_funcs.chat_status import is_user_admin
+from menhera.modules.helper_funcs.misc import paginate_modules
+from menhera.modules.translations.strings import tld, tld_help 
+from menhera.modules.connection import connected
 
 PM_START = """Hello {}, my name is *{}*
 I'm here to help you to manage your groups.
@@ -126,7 +126,7 @@ def start(bot: Bot, update: Update, args: List[str]):
         else:
             send_start(bot, update)
     else:
-        update.effective_message.reply_text("I'm Always Active 😁")
+        update.effective_message.reply_text("Hoi! I'm Alive :-)")
 
 
 def send_start(bot, update):
@@ -175,7 +175,7 @@ def control_panel(bot, update):
 
         LOGGER.info(query.data)
     else:
-        M_match = "TonyStark is the best bot" #LMAO, don't uncomment
+        M_match = "MenheraChan is the best bot" #LMAO, don't uncomment
 
     if M_match:
         text = "*Control panel* 🛠"
@@ -403,9 +403,11 @@ def get_help(bot: Bot, update: Update):
         send_help(chat.id, text, InlineKeyboardMarkup([[InlineKeyboardButton(text=tld(chat.id, "Back"), callback_data="help_back")]]))
 
     else:
-        send_help(chat.id, tld(chat.id, "send-help").format("" if not ALLOW_EXCL else tld(chat.id, "\nAll commands can either be used with `/` or `!`.\n")))
-
-
+        send_help(chat.id, tld(chat.id, "send-help").format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else tld(
+            chat.id, "\nAll commands can either be used with `/` or `!`.\n"
+                )))
+        
+        
 def send_settings(chat_id, user_id, user=False):
     if user:
         if USER_SETTINGS:
