@@ -70,7 +70,7 @@ def kang(bot: Bot, update: Update, args: List[str]):
         elif reply.sticker and reply.sticker.emoji:
             sticker_emoji = reply.sticker.emoji
         else:
-            sticker_emoji = "😂"
+            sticker_emoji = "🤔"
     elif args and not reply:
         urlemoji = msg.text.split(" ")
         if len(urlemoji) == 3:                
@@ -78,7 +78,7 @@ def kang(bot: Bot, update: Update, args: List[str]):
             sticker_emoji = urlemoji[2]
         elif len(urlemoji) == 2:
             png_sticker = urlemoji[1]
-            sticker_emoji = "😂"
+            sticker_emoji = "🤔"
         else:
             msg.reply_text("/kang <link> <emoji(s) [Optional]>")
             return
@@ -118,7 +118,7 @@ def kang(bot: Bot, update: Update, args: List[str]):
         elif e.message == "Invalid sticker emojis":
             msg.reply_text("Invalid emoji(s).")
         elif e.message == "Stickers_too_much":
-            msg.reply_text("Max packsize reached. Press F to pay respect.")
+            msg.reply_text("Max packsize reached. Press F to pay respecc.")
         print(e)
 
 def makepack_internal(msg, user, png_sticker, emoji, bot):
@@ -126,7 +126,7 @@ def makepack_internal(msg, user, png_sticker, emoji, bot):
     name = name[:50]
     packname = f"c{user.id}_by_{bot.username}"
     try:
-        success = bot.create_new_sticker_set(user.id, packname, name + "'s @SaraPubg_bot stickers",
+        success = bot.create_new_sticker_set(user.id, packname, name + "'s @rubytony_bot stickers",
                                              png_sticker=png_sticker,
                                              emojis=emoji)
     except TelegramError as e:
