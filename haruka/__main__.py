@@ -14,11 +14,11 @@ from menhera import dispatcher, updater, TOKEN, WEBHOOK, SUDO_USERS, OWNER_ID, C
     ALLOW_EXCL
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-from menhera.modules import ALL_MODULES
-from menhera.modules.helper_funcs.chat_status import is_user_admin
-from menhera.modules.helper_funcs.misc import paginate_modules
-from menhera.modules.translations.strings import tld, tld_help 
-from menhera.modules.connection import connected
+from haruka.modules import ALL_MODULES
+from haruka.modules.helper_funcs.chat_status import is_user_admin
+from haruka.modules.helper_funcs.misc import paginate_modules
+from haruka.modules.translations.strings import tld, tld_help 
+from haruka.modules.connection import connected
 
 PM_START = """Hello {}, my name is *{}*
 I'm here to help you to manage your groups.
