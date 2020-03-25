@@ -65,13 +65,13 @@ def ban(bot: Bot, update: Update, args: List[str]) -> str:
         keyboard = []
         bot.send_sticker(update.effective_chat.id, BAN_STICKER)  # ban sticker
         reply = "Nub {} Snapped by Pro {} in {}!".format(mention_html(member.user.id, member.user.first_name), mention_html(user.id, user.first_name), html.escape(chat.title))
-        message.reply_text(reply, reply_markup=keyboard, parse_mode=ParseMode.HTML)
+        message.reply_text(reply, reply_markup=keyboard, parse_mode=ParseMode.MARKDOWN)
         return log
 
     except BadRequest as excp:
         if excp.message == "Reply message not found":
             # Do not reply
-            message.reply_text('Nub {} Snapped by Pro {} in {}!'.format(mention_html(member.user.id, member.user.first_name), mention_html(user.id, user.first_name), html.escape(chat.title)reply, reply_markup=keyboard, parse_mode=ParseMode.HTML), quote=False)
+            message.reply_text('Nub {} Snapped by Pro {} in {}!'.format(mention_html(member.user.id, member.user.first_name), mention_html(user.id, user.first_name), html.escape(chat.title), quote=False)
             return log
         else:
             LOGGER.warning(update)
