@@ -54,8 +54,8 @@ def ban(bot: Bot, update: Update, args: List[str]) -> str:
     log = "<b>{}:</b>" \
           "\n#BANNED" \
           "\n<b>Admin:</b> {}" \
-          "\n<b>User:</b> {} (<code>{}</code>)".format(mention_html(member.user.id, member.user.first_name), mention_html(user.id, user.first_name), chat.title) 
-         if reason: log += "\n<b>Reason:</b> {}".format(reason)
+          "\n<b>User:</b> {} (<code>{}</code>)".format(mention_html(member.user.id, member.user.first_name), mention_html(user.id, user.first_name)) 
+         if reason: log += "\n<b>Reason:</b> {}".format(reason)chat.title
     
 
     try:
