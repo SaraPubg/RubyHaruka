@@ -61,19 +61,19 @@ def ban(bot: Bot, update: Update, args: List[str]) -> str:
     try:
         chat.kick_member(user_id)
         bot.send_sticker(chat.id, BAN_STICKER)  # banhammer marie sticker
-        message.reply_text(tld(chat.id, "Admin-{} banned User-{} in {chatname}!"))
+        message.reply_text(tld(chat.id, "Admin-{} banned User-{}!"))
         return log
 
     except BadRequest as excp:
         if excp.message == "Reply message not found":
             # Do not reply
-            message.reply_text(tld(chat.id, "Admin-{} banned User-{} in {chatname}!"), quote=False)
+            message.reply_text(tld(chat.id, "Admin-{} banned User-{}!"), quote=False)
             return log
         else:
             LOGGER.warning(update)
             LOGGER.exception("ERROR banning user %s in chat %s (%s) due to %s", user_id, chat.title, chat.id,
                              excp.message)
-            message.reply_text(tld(chat.id, "Admin-{} banned User-{} in {chatname}!"))
+            message.reply_text(tld(chat.id, "Admin-{} banned User-{}!"))
 
     return ""
 
