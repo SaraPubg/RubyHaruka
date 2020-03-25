@@ -58,8 +58,8 @@ def ban(bot: Bot, update: Update, args: List[str]) -> str:
                                                        mention_html(user.id, user.first_name),
                                                        mention_html(member.user.id, member.user.first_name),
                                                        member.user.id)
-         if reason: 
-             log += "\n<b>Reason:</b> {}".format(reason)
+    if reason:
+        log += "\n<b>Reason:</b> {}".format(reason)
     
 
     try:
