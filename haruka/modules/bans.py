@@ -5,7 +5,7 @@ from telegram import Message, Chat, Update, Bot, User
 from telegram.error import BadRequest
 from telegram.ext import run_async, CommandHandler, Filters
 from telegram.utils.helpers import mention_html
-from telegram import InlineKeyboardButton, ReplyKeyboardMarkup, ParseMode, User, CallbackQuery
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, User, CallbackQuery
 
 from haruka import dispatcher, BAN_STICKER, LOGGER
 from haruka.modules.disable import DisableAbleCommandHandler
@@ -65,7 +65,7 @@ def ban(bot: Bot, update: Update, args: List[str]) -> str:
         keyboard = []
         bot.send_sticker(update.effective_chat.id, BAN_STICKER)  # ban sticker
         reply = "Nub {} Snapped by Pro {} in {}!".format(mention_html(member.user.id, member.user.first_name), mention_html(user.id, user.first_name), html.escape(chat.title))
-        message.reply_text(reply, reply_markup=keyboard, parse_mode=ParseMode.HTML)
+        message.reply_text(reply, reply_markup=InlineKeyboardMarkup(keyboard), parse_mode=ParseMode.HTML)
         return log
 
     except BadRequest as excp:
