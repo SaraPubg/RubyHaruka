@@ -5,7 +5,7 @@ from telegram import Message, Chat, Update, Bot, User
 from telegram.error import BadRequest
 from telegram.ext import run_async, CommandHandler, Filters
 from telegram.utils.helpers import mention_html
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, User, CallbackQuery
+from telegram import InlineKeyboardButton, ReplyKeyboardMarkup, ParseMode, User, CallbackQuery
 
 from haruka import dispatcher, BAN_STICKER, LOGGER
 from haruka.modules.disable import DisableAbleCommandHandler
