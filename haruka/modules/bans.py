@@ -64,7 +64,7 @@ def ban(bot: Bot, update: Update, args: List[str]) -> str:
         chat.kick_member(user_id)
         keyboard = []
         bot.send_sticker(update.effective_chat.id, BAN_STICKER)  # ban sticker
-        reply = "Admin-{} banned User-{}!".format(mention_html(member.user.id, member.user.first_name), mention_html(user.id, user.first_name))
+        reply = "Nub {} Snapped by Pro {}!".format(mention_html(member.user.id, member.user.first_name), mention_html(user.id, user.first_name))
         message.reply_text(reply, reply_markup=keyboard, parse_mode=ParseMode.HTML)
         return log
 
