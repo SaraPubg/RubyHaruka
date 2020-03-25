@@ -63,6 +63,11 @@ def warn(user: User, chat: Chat, reason: str, message: Message, warner: User = N
                                                                   user.id, reason, num_warns, limit)
 
     else:
+
+reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Rules",
+                                                                       url="t.me/{}?start={}".format(bot.username,
+                                                                                                     chat_id))]]))
+    else:
         keyboard = InlineKeyboardMarkup(
             [[InlineKeyboardButton("Remove warn (Admin Only)", callback_data="rm_warn({})".format(user.id))]])
 
