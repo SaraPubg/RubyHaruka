@@ -62,12 +62,9 @@ def warn(user: User, chat: Chat, reason: str, message: Message, warner: User = N
                                                                   mention_html(user.id, user.first_name),
                                                                   user.id, reason, num_warns, limit)
 
-   
     else:
-        keyboard = 
-            [[InlineKeyboardButton(text="Remove warn", callback_data="rm_warn({})".format(user.id)), 
-            InlineKeyboardButton(text="Rules",url="t.me/{}?start={}".format(bot.username, chat_id))]]
-        
+        keyboard = InlineKeyboardMarkup(
+            [[InlineKeyboardButton("Remove warn (Admin Only)", callback_data="rm_warn({})".format(user.id))]])
 
         reply = "{} has {}/{} warnings... watch out!".format(mention_html(user.id, user.first_name), num_warns,
                                                              limit)
