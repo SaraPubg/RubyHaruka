@@ -55,25 +55,25 @@ def ban(bot: Bot, update: Update, args: List[str]) -> str:
           "\n#BANNED" \
           "\n<b>Admin:</b> {}" \
           "\n<b>User:</b> {} (<code>{}</code>)".format(mention_html(member.user.id, member.user.first_name), mention_html(user.id, user.first_name)) 
-         if reason: log += "\n<b>Reason:</b> {}".format(reason)chat.title
+         if reason: log += "\n<b>Reason:</b> {}".format(reason)
     
 
     try:
         chat.kick_member(user_id)
         bot.send_sticker(chat.id, BAN_STICKER)  # banhammer marie sticker
-        message.reply_text(tld(chat.id, "Admin-{} banned User-{} in {}!"))
+        message.reply_text(tld(chat.id, "Admin-{} banned User-{} in {chatname}!"))
         return log
 
     except BadRequest as excp:
         if excp.message == "Reply message not found":
             # Do not reply
-            message.reply_text(tld(chat.id, "Admin-{} banned User-{} in {}!"), quote=False)
+            message.reply_text(tld(chat.id, "Admin-{} banned User-{} in {chatname}!"), quote=False)
             return log
         else:
             LOGGER.warning(update)
             LOGGER.exception("ERROR banning user %s in chat %s (%s) due to %s", user_id, chat.title, chat.id,
                              excp.message)
-            message.reply_text(tld(chat.id, "Admin-{} banned User-{} in {}!"))
+            message.reply_text(tld(chat.id, "Admin-{} banned User-{} in {chatname}!"))
 
     return ""
 
