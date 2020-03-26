@@ -75,7 +75,7 @@ def ban(bot: Bot, update: Update, args: List[str]) -> str:
             # Do not reply
             reply = "{} has been banned!" \
             "\n<b>Reason:</b> {}".format(mention_html(member.user.id, member.user.first_name), (reason))
-             message.reply_text(reply, reply_markup=keyboard, parse_mode=ParseMode.HTML)
+             
             return log
         else:
             LOGGER.warning(update)
