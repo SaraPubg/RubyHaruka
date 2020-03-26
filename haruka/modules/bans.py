@@ -65,7 +65,7 @@ def ban(bot: Bot, update: Update, args: List[str]) -> str:
         keyboard = []
         bot.send_sticker(update.effective_chat.id, BAN_STICKER)  # ban sticker
         message.reply_text("{} has been banned!" \
-        "\n<b>Reason:</b> {}".format(mention_html(member.user.id, member.user.first_name), (reason)))
+        "\n<b>Reason:</b> {}".format(mention_html(member.user.id, member.user.first_name), (reason), parse_mode=ParseMode.HTML))
         
         return log
 
@@ -73,7 +73,7 @@ def ban(bot: Bot, update: Update, args: List[str]) -> str:
         if excp.message == "Reply message not found":
             # Do not reply
             message.reply_text("{} has been banned!" \
-        "\n<b>Reason:</b> {}".format(mention_html(member.user.id, member.user.first_name), (reason)), quote=False)
+        "\n<b>Reason:</b> {}".format(mention_html(member.user.id, member.user.first_name), (reason), parse_mode=ParseMode.HTML, quote=False))
             return log
         else:
             LOGGER.warning(update)
