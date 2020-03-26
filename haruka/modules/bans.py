@@ -7,14 +7,14 @@ from telegram.ext import run_async, CommandHandler, Filters
 from telegram.utils.helpers import mention_html
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, User, CallbackQuery
 
-from haruka import dispatcher, BAN_STICKER, LOGGER
-from haruka.modules.disable import DisableAbleCommandHandler
-from haruka.modules.helper_funcs.chat_status import bot_admin, user_admin, is_user_ban_protected, can_restrict, \
+from tg_bot import dispatcher, BAN_STICKER, LOGGER
+from tg_bot.modules.disable import DisableAbleCommandHandler
+from tg_bot.modules.helper_funcs.chat_status import bot_admin, user_admin, is_user_ban_protected, can_restrict, \
     is_user_admin, is_user_in_chat, is_bot_admin
-from haruka.modules.helper_funcs.extraction import extract_user_and_text
-from haruka.modules.helper_funcs.string_handling import extract_time
-from haruka.modules.log_channel import loggable
-from haruka.modules.helper_funcs.filters import CustomFilters
+from tg_bot.modules.helper_funcs.extraction import extract_user_and_text
+from tg_bot.modules.helper_funcs.string_handling import extract_time
+from tg_bot.modules.log_channel import loggable
+from tg_bot.modules.helper_funcs.filters import CustomFilters
 
 
 @run_async
@@ -64,18 +64,16 @@ def ban(bot: Bot, update: Update, args: List[str]) -> str:
         chat.kick_member(user_id)
         keyboard = []
         bot.send_sticker(update.effective_chat.id, BAN_STICKER)  # ban sticker
-        reply = "{} has been banned!" \
-          "\n<b>Reason:</b> {}".format(mention_html(member.user.id, member.user.first_name), (reason))
-        message.reply_text(reply, reply_markup=keyboard, parse_mode=ParseMode.HTML)
-
+        message.reply_text("{} has been banned!" \
+        "\n<b>Reason:</b> {}".format(mention_html(member.user.id, member.user.first_name), (reason)))
+        
         return log
 
     except BadRequest as excp:
         if excp.message == "Reply message not found":
             # Do not reply
-            reply = "{} has been banned!" \
-            "\n<b>Reason:</b> {}".format(mention_html(member.user.id, member.user.first_name), (reason))
-             
+            message.reply_text("{} has been banned!" \
+        "\n<b>Reason:</b> {}".format(mention_html(member.user.id, member.user.first_name), (reason)), quote=False)
             return log
         else:
             LOGGER.warning(update)
