@@ -22,7 +22,6 @@ def clean_blue_text_must_click(update, context):
 		update.effective_message.delete()
 
 @run_async
-@spamcheck
 @user_admin
 def set_blue_text_must_click(update, context):
 	chat = update.effective_chat  # type: Optional[Chat]
