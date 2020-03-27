@@ -1,6 +1,7 @@
 import html
 from typing import Optional, List
 
+from haruka import dispatcher
 from telegram import Message, Chat, Update, Bot, User
 from telegram.error import BadRequest
 from telegram.ext import Filters, MessageHandler, CommandHandler, run_async
