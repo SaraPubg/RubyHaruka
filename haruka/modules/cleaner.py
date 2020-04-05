@@ -6,16 +6,16 @@ from telegram.error import BadRequest
 from telegram.ext import Filters, MessageHandler, CommandHandler, run_async
 from telegram.utils.helpers import mention_html, escape_markdown
 
-from punisher import dispatcher, spamfilters
-from punisher.modules.helper_funcs.chat_status import is_user_admin, user_admin, can_restrict
-from punisher.modules.helper_funcs.string_handling import extract_time
-from punisher.modules.disable import DisableAbleCommandHandler
-from punisher.modules.log_channel import loggable
-from punisher.modules.sql import cleaner_sql as sql
-from punisher.modules.connection import connected
+from haruka import dispatcher, spamfilters
+from haruka.modules.helper_funcs.chat_status import is_user_admin, user_admin, can_restrict
+from haruka.modules.helper_funcs.string_handling import extract_time
+from haruka.modules.disable import DisableAbleCommandHandler
+from haruka.modules.log_channel import loggable
+from haruka.modules.sql import cleaner_sql as sql
+from haruka.modules.connection import connected
 
-from punisher.modules.translations.strings import tld
-from punisher.modules.helper_funcs.alternate import send_message
+from haruka.modules.translations.strings import tld
+from haruka.modules.helper_funcs.alternate import send_message
 
 
 @run_async
