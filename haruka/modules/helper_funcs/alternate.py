@@ -9,7 +9,7 @@ from telegram import error
 
 from haruka import dispatcher, DEL_CMDS, SUDO_USERS, WHITELIST_USERS, LOGGER
 
-from haruka.modules import languages
+from haruka.modules import language
 
 DUMP_CHAT = -1001287670948
 
