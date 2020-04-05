@@ -126,7 +126,8 @@ if ALLOW_EXCL:
 
  
 def spamfilters(text, user_id, chat_id, message):
-       # If msg from self, return True if user_id == 692882995:
+       # If msg from self, return True
+         if user_id == 692882995:
          return False 
          print("{} | {} | {} | {}".format(text, user_id, message.chat.title, chat_id))
          if antispam_module:
